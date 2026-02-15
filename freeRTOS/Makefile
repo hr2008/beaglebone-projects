@@ -113,7 +113,6 @@ $(BUILD)/$(TARGET).elf: $(OBJS) $(PORT_LIB) linker.ld | $(BUILD)
 # -------------------------------------------------
 $(BUILD)/$(TARGET).bin: $(BUILD)/$(TARGET).elf
 	$(OBJCOPY) -O binary $< $@
-	cp $@ ~/.
 
 # Create disassembly listing
 $(BUILD)/$(TARGET).lst: $(BUILD)/$(TARGET).elf
