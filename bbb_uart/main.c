@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "uart.h"
+#include "debug_uart.h"
 #include "printf.h"
 
 volatile int dummy_bss;
