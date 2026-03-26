@@ -133,6 +133,33 @@ Connect serial console
 This allows development without JTAG or debugger hardware.
 
 ------------------------------------------------------------------------
+## 🔎 FREERTOS Loading to DDR
+
+Prepare SD card with a FAT32 partition
+
+Copy uboot and MLO files to the SD card
+
+Copy freeRTOS_app.bin to the same partition along side uboot and MLO files
+
+    u-boot.img
+    MLO
+    freeRTOS_app.bin
+
+Connect serial console
+
+    minicom -D /dev/ttyUSB0 -b 115200
+
+
+Insert SD card to BBB and boot from SD card.
+
+See Uboot boot initially and then jumps to FreeRTOS
+
+-   Uboot internally initialize DDR and copies freeRTOS binary to the DDR
+-   Uboot jumps to FreeRTOS
+
+![Alt text](./freeRTOS/freeRTOS_ddrBoot.png)
+
+------------------------------------------------------------------------
 
 ## Demonstrated Low‑Level Concepts
 
