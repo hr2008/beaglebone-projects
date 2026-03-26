@@ -25,8 +25,11 @@
 
 #define configSUPPORT_STATIC_ALLOCATION         0
 #define configSUPPORT_DYNAMIC_ALLOCATION        1
+#ifdef DDR_HEAP
+    #define configTOTAL_HEAP_SIZE               (32 * 1024)
+#else
 #define configTOTAL_HEAP_SIZE                   (8 * 1024)
-
+#endif
 /* -------------------------------------------------
    Cortex-A specifics
    ------------------------------------------------- */
